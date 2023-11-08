@@ -1,8 +1,3 @@
-provider "mongodbatlas" {
-  public_key  = var.mongodb_atlas_public_key
-  private_key = var.mongodb_atlas_private_key
-}
-
 # Create a Project
 resource "mongodbatlas_project" "tech_challenge" {
   name   = var.atlas_project_name
