@@ -5,7 +5,7 @@ provider "mongodbatlas" {
 
 # Create a Project
 resource "mongodbatlas_project" "tech_challenge" {
-  name   = var.atlas_project_name
+  name   = "novo-bd"
   org_id = var.atlas_org_id
 }
 
