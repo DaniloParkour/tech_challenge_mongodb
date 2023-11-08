@@ -4,14 +4,14 @@ provider "mongodbatlas" {
 }
 
 # Create a Project
-resource "mongodbatlas_project" "my_project" {
+resource "mongodbatlas_project" "tech_challenge" {
   name   = var.atlas_project_name
   org_id = var.atlas_org_id
 }
 
 # Create a Shared Tier Cluster
 resource "mongodbatlas_cluster" "my_cluster" {
-  project_id              = mongodbatlas_project.my_project.id
+  project_id              = mongodbatlas_project.tech_challenge.id
   name                    = var.atlas_project_cluster_name
 
   # Provider Settings "block"
@@ -35,7 +35,7 @@ resource "mongodbatlas_cluster" "my_cluster" {
 resource "mongodbatlas_database_user" "my_user" {
   username           = var.mongodb_atlas_database_username
   password           = var.mongodb_atlas_database_password
-  project_id         = mongodbatlas_project.my_project.id
+  project_id         = mongodbatlas_project.tech_challenge.id
   auth_database_name = "admin"
 
   roles {
@@ -49,7 +49,7 @@ resource "mongodbatlas_database_user" "my_user" {
 # replace ip_address with either cidr_block = "CIDR_NOTATION"
 # or aws_security_group = "SECURITY_GROUP_ID"
 resource "mongodbatlas_project_ip_access_list" "my_ipaddress" {
-      project_id = mongodbatlas_project.my_project.id
+      project_id = mongodbatlas_project.tech_challenge.id
       # ip_address = var.ip_address
       cidr_block = var.cidr_block
       comment    = "My IP Address"
