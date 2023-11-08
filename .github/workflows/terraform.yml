@@ -12,11 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: hashicorp/setup-terraform@v2
-      - name: Setup AtlasCLI
-        uses: mongodb/mongodb-atlas-cli@main
-        with:
-          MONGODB_ATLAS_PUBLIC_API_KEY: ${{ secrets.MONGODB_ATLAS_PUBLIC_API_KEY }}
-          MONGODB_ATLAS_PRIVATE_API_KEY: ${{ secrets.MONGODB_ATLAS_PRIVATE_API_KEY }}
       - run: terraform init
       - name: Terraform plan
         id: plan

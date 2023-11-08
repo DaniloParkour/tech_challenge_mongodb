@@ -1,5 +1,7 @@
 atlas_org_id = "60be9485627050154328ee3a"
-atlas_project_name = "mongo_tech_challenge"
+mongodb_atlas_public_key = "pylrmibs"
+mongodb_atlas_private_key = "e2b95834-277d-4d99-9f1d-f65fa53c1c83"
+atlas_project_name = "mongodb_tech_challenge"
 atlas_project_cluster_name = "fiapClusterFood"
 environment = "dev"
 cluster_instance_size_name = "M0"
